@@ -1,0 +1,60 @@
+import React from 'react'
+import { Button, Text, View, TouchableOpacity } from 'react-native';
+import { StackScreenProps } from '@react-navigation/stack';
+import { styles } from '../theme/appTheme';
+import Icon from "react-native-vector-icons/Ionicons";
+
+/*
+    StackScreenProps pide 2 argumentos
+    1. Un objeto
+    2. Que especifique las propiedades que puede tener ese objeto
+*/
+interface Props extends StackScreenProps<any, any>{};
+
+export const Pagina1Screen = ( { navigation }: Props ) => {
+
+    return (
+        <View style={ styles.globalMargin }>
+            <Text style={ styles.title }>Pagina 1 Screen</Text>
+
+            <Button
+                title="Ir página 2"
+                onPress={ () => navigation.navigate('Pagina2Screen') }
+            />
+
+            <View style={ styles.spaces } />
+
+            <Text style={{
+              marginVertical: 10,
+              fontSize: 20,
+              //marginLeft: 5
+            }} >Navegar con argumentos:</Text>
+            <View style={{ flexDirection: 'row' }}>
+                <TouchableOpacity
+                    style={{
+                        ...styles.bigButton,
+                        backgroundColor: '#bbdefb'
+                    }}
+                    onPress={ () => navigation.navigate('PersonaScreen', {
+                        id: 1,
+                        nombre: "Pedro"
+                    }) }
+                >
+                  <Icon name={ 'body-outline' } size={35} color="white" />
+                  <Text style={ styles.textBigButton }>Pedro</Text>
+
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={ styles.bigButton }
+                    onPress={ () => navigation.navigate('PersonaScreen', {
+                        id: 2,
+                        nombre: "Maria"
+                    }) }
+                >
+                    <Icon name={ 'woman-outline' } size={35} color="white" />
+                    <Text style={ styles.textBigButton }>Maria</Text>
+                </TouchableOpacity>
+            </View>
+        </View>
+    )
+}
