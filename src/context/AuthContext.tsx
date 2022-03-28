@@ -1,4 +1,5 @@
-import React, {createContext} from "react";
+import React, {createContext, useReducer} from "react";
+import {authReducer} from "./AuthReducer";
 
 export interface AuthState {
     isLoggedIn: boolean;
@@ -28,9 +29,12 @@ export const AuthProvider = ({ children }: any ) => {
     Varios elementos -> export const AuthProvider = ({ children }: { children: JSX.Element[] }) => {
 */
 
+    // El dispatch es la funcion para enviarle las acciones al reducer (authReducer)
+    const [ authStateReducer, dispatch ] = useReducer(authReducer, authInitialState);
+
     return (
         <AuthContext.Provider value={{
-            authState: authInitialState,
+            authState: authStateReducer,
             signIn: () => {}
         }}>
             { children }

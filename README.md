@@ -8,3 +8,5 @@
     * Envuelvo los hijos en el contexto en App.tsx
 #### 136. Consumir el context - AuthState
     * En screens/SettingsScreen.tsx
+#### 137. Reducer - useReducer
+    * Creado context/AuthReducer.tsx
