@@ -1,5 +1,8 @@
 ## Context estado global de la aplicación (Stack, Drawer)
 ### Sección 9 del curso React Native (Fernando H)
 
-#### 101. Inicio del proyecto
+#### 134. Inicio del proyecto
     * Se inicia con el proyecto anterior de los tipos de navegación y tabs
+#### 135. Crear el primer Context en TypeScript
+    * Creada carpeta context, archivo AuthContext
+    * Envuelvo los hijos en el contexto en App.tsx
