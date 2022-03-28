@@ -6,3 +6,5 @@
 #### 135. Crear el primer Context en TypeScript
     * Creada carpeta context, archivo AuthContext
     * Envuelvo los hijos en el contexto en App.tsx
+#### 136. Consumir el context - AuthState
+    * En screens/SettingsScreen.tsx
