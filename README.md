@@ -11,3 +11,5 @@
 #### 137. Reducer - useReducer
     * Creado context/AuthReducer.tsx
 #### 138. Disparar acciones
+#### 139. Disparar el SignIn desde otra pantalla
+    * En ContactsScreen se obtiene el redux y se valida mostrar o no el btn de login
