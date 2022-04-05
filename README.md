@@ -13,3 +13,6 @@
 #### 138. Disparar acciones
 #### 139. Disparar el SignIn desde otra pantalla
     * En ContactsScreen se obtiene el redux y se valida mostrar o no el btn de login
+#### 140. TouchableIcon - Custom Component
+    * Agregado un TouchableIcon para hacer clic a los iconos y poder ver el nombre de éste
+    * Nuevo componente creado en components/TouchableIcon.tsx
