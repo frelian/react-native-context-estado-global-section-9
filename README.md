@@ -10,3 +10,4 @@
     * En screens/SettingsScreen.tsx
 #### 137. Reducer - useReducer
     * Creado context/AuthReducer.tsx
+#### 138. Disparar acciones

@@ -30,12 +30,18 @@ export const AuthProvider = ({ children }: any ) => {
 */
 
     // El dispatch es la funcion para enviarle las acciones al reducer (authReducer)
+    // dispatch es el unico medio para modificar el estado, en una sola via
     const [ authStateReducer, dispatch ] = useReducer(authReducer, authInitialState);
+
+    const signIn = () => {
+        dispatch({ type: 'signIn' })
+    }
 
     return (
         <AuthContext.Provider value={{
             authState: authStateReducer,
-            signIn: () => {}
+            // signIn: () => {}
+            signIn // ya que la funcion que exporto/expongo es signIn: signIn en ES6 es lo mismo que poner solo "signIn"
         }}>
             { children }
         </AuthContext.Provider>
