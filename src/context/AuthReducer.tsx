@@ -1,6 +1,8 @@
 import {AuthState} from "./AuthContext";
 
-type AuthAction = { type: 'signIn' };
+type AuthAction =
+    | { type: 'signIn' }
+    | { type: 'changeFavIcon', payload: string } ;
 
 /*
   export const authReducer = ( state: AuthState, action: any ): AuthState => {
@@ -13,7 +15,6 @@ export const authReducer = ( state: AuthState, action: AuthAction ): AuthState =
 
     switch ( action.type ) {
         case 'signIn':
-
             /*
               Mala practica mutar el estado, ya que se devuelve el mismo estado solo que con una propiedad cambiada
                 state.isLoggedIn = true;
@@ -27,8 +28,13 @@ export const authReducer = ( state: AuthState, action: AuthAction ): AuthState =
                 isLoggedIn: true,
                 username: 'no-username-yet'
             }
+        case "changeFavIcon":
+            return {
+                ...state,
+                favoriteIcon: action.payload
+            }
 
-      default:
+        default:
           return state;
     }
 

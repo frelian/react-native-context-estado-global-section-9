@@ -16,3 +16,5 @@
 #### 140. TouchableIcon - Custom Component
     * Agregado un TouchableIcon para hacer clic a los iconos y poder ver el nombre de éste
     * Nuevo componente creado en components/TouchableIcon.tsx
+#### 141. Cambiar el icono favorito - AuthState
+    * Al hacer clic en algun icono del Tab1 luego en Ajustes, se muestra el icono al cual se hizo clic

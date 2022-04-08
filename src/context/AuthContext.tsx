@@ -16,6 +16,7 @@ export const authInitialState: AuthState = {
 export interface AuthContextProps {
     authState: AuthState;
     signIn: () => void;
+    changeFavoriteIcon: (iconName: string) => void;
 }
 
 // Crear el contexto
@@ -37,11 +38,17 @@ export const AuthProvider = ({ children }: any ) => {
         dispatch({ type: 'signIn' })
     }
 
+    // Esta funcion se la tengo que dar al context (AuthContext.Provider) abajo, para que cualquier componente pueda acceder a ella
+    const changeFavoriteIcon = ( iconName: string ) => {
+        dispatch({ type: 'changeFavIcon', payload: iconName })
+    }
+
     return (
         <AuthContext.Provider value={{
             authState: authStateReducer,
             // signIn: () => {}
-            signIn // ya que la funcion que exporto/expongo es signIn: signIn en ES6 es lo mismo que poner solo "signIn"
+            signIn, // ya que la funcion que exporto/expongo es signIn: signIn en ES6 es lo mismo que poner solo "signIn"
+            changeFavoriteIcon
         }}>
             { children }
         </AuthContext.Provider>
