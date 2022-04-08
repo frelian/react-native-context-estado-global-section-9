@@ -18,3 +18,4 @@
     * Nuevo componente creado en components/TouchableIcon.tsx
 #### 141. Cambiar el icono favorito - AuthState
     * Al hacer clic en algun icono del Tab1 luego en Ajustes, se muestra el icono al cual se hizo clic
+#### 142. Borrar información del AuthState - Logout

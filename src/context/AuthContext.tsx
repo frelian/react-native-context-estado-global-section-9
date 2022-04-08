@@ -16,6 +16,7 @@ export const authInitialState: AuthState = {
 export interface AuthContextProps {
     authState: AuthState;
     signIn: () => void;
+    logout: () => void;
     changeFavoriteIcon: (iconName: string) => void;
 }
 
@@ -43,11 +44,16 @@ export const AuthProvider = ({ children }: any ) => {
         dispatch({ type: 'changeFavIcon', payload: iconName })
     }
 
+    const logout = () => {
+        dispatch({ type: 'logout' })
+    }
+
     return (
         <AuthContext.Provider value={{
             authState: authStateReducer,
             // signIn: () => {}
             signIn, // ya que la funcion que exporto/expongo es signIn: signIn en ES6 es lo mismo que poner solo "signIn"
+            logout,
             changeFavoriteIcon
         }}>
             { children }
