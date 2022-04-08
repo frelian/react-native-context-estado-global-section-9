@@ -18,6 +18,7 @@ export interface AuthContextProps {
     signIn: () => void;
     logout: () => void;
     changeFavoriteIcon: (iconName: string) => void;
+    changeUsername: (username: string) => void;
 }
 
 // Crear el contexto
@@ -48,13 +49,18 @@ export const AuthProvider = ({ children }: any ) => {
         dispatch({ type: 'logout' })
     }
 
+    const changeUsername = (username: string) => {
+        dispatch({ type: 'changeUsername', payload: username })
+    }
+
     return (
         <AuthContext.Provider value={{
             authState: authStateReducer,
             // signIn: () => {}
             signIn, // ya que la funcion que exporto/expongo es signIn: signIn en ES6 es lo mismo que poner solo "signIn"
             logout,
-            changeFavoriteIcon
+            changeFavoriteIcon,
+            changeUsername
         }}>
             { children }
         </AuthContext.Provider>

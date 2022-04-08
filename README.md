@@ -19,3 +19,6 @@
 #### 141. Cambiar el icono favorito - AuthState
     * Al hacer clic en algun icono del Tab1 luego en Ajustes, se muestra el icono al cual se hizo clic
 #### 142. Borrar información del AuthState - Logout
+#### 143. Cambiar el username
+    * Al hacer clic en los botones Pedro y Maria se muestran sus nombres en ajustes
+    * Fin de seccion de Context
